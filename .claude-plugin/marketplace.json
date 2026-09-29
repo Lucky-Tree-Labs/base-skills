@@ -1,0 +1,20 @@
+{
+  "name": "base-skills",
+  "metadata": {
+    "description": "Base skills and MCP server for Claude Code"
+  },
+  "owner": {
+    "name": "Lucky Tree Labs",
+    "email": "support@createbases.com"
+  },
+  "plugins": [
+    {
+      "name": "base",
+      "description": "Create, share, and work in Bases: permissioned, cited knowledge bases that people and their agents read and build together",
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://createbases.com/agents",
+      "tags": ["knowledge-base", "documents", "citations", "sharing", "collaboration", "mcp"]
+    }
+  ]
+}

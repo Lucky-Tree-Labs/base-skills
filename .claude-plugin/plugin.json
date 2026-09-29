@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "base",
+  "description": "Create, share, and work in Bases: permissioned, cited knowledge bases that people and their agents read and build together",
+  "version": "1.0.0",
+  "logo": "assets/app-icon.svg",
+  "mcpServers": {
+    "base": {
+      "type": "http",
+      "url": "https://createbases.com/api/mcp"
+    }
+  },
+  "author": {
+    "name": "Lucky Tree Labs",
+    "email": "support@createbases.com",
+    "url": "https://createbases.com"
+  },
+  "homepage": "https://createbases.com/agents",
+  "repository": "https://github.com/Lucky-Tree-Labs/base-skills",
+  "license": "MIT",
+  "keywords": ["knowledge-base", "documents", "citations", "sharing", "collaboration", "mcp"]
+}

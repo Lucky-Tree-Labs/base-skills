@@ -1,0 +1,15 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "base",
+  "version": "1.0.0",
+  "description": "Create, share, and work in Bases: permissioned, cited knowledge bases that people and their agents read and build together",
+  "author": {
+    "name": "Lucky Tree Labs",
+    "email": "support@createbases.com",
+    "url": "https://createbases.com"
+  },
+  "homepage": "https://createbases.com/agents",
+  "repository": "https://github.com/Lucky-Tree-Labs/base-skills",
+  "license": "MIT",
+  "keywords": ["knowledge-base", "documents", "citations", "sharing", "collaboration", "mcp"]
+}
