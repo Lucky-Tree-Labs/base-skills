@@ -1,8 +1,12 @@
 name: Sync skills from createbases.com
 
-# Opens a pull request, never pushes to main. A skill is instructions that run
-# with full permissions inside every installer's agent, so a change to one is
-# approved by a person even when it comes from our own site.
+# Never pushes to main. A skill is instructions that run with full permissions
+# inside every installer's agent, so a change to one is approved by a person
+# even when it comes from our own site.
+#
+# The organization does not let Actions open pull requests, so this pushes the
+# change to a branch and opens an issue that links the diff. A maintainer opens
+# the pull request from there.
 on:
   schedule:
     - cron: "17 6 * * *"
@@ -10,7 +14,7 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
+  issues: write
 
 jobs:
   sync:
@@ -18,9 +22,10 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - run: scripts/sync.sh
-      - name: Open a pull request if the skills changed
+      - name: Push a branch and open an issue if the skills changed
         env:
           GH_TOKEN: ${{ github.token }}
+          TITLE: Skills changed at createbases.com
         run: |
           git add -A skills
           if git diff --cached --quiet; then echo "no change"; exit 0; fi
@@ -29,7 +34,9 @@ jobs:
           git switch -C sync/skills
           git commit -m "Sync skills from createbases.com"
           git push --force origin sync/skills
-          gh pr view sync/skills --json state --jq .state 2>/dev/null | grep -q OPEN \
-            || gh pr create --base main --head sync/skills \
-                 --title "Sync skills from createbases.com" \
-                 --body "The skills published at createbases.com/.well-known/skills/ changed. Review the diff before merging: these files run as instructions in every installer's agent."
+          open=$(gh issue list --state open --search "in:title \"$TITLE\"" --json number --jq 'length')
+          if [ "$open" = "0" ]; then
+            gh issue create --title "$TITLE" --body "The skills published at createbases.com/.well-known/skills/ differ from this repository. Review the diff and open a pull request: https://github.com/${{ github.repository }}/compare/main...sync/skills?expand=1
+
+          These files run as instructions in every installer's agent, so read the diff before merging."
+          fi

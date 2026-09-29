@@ -41,8 +41,8 @@ here: add the connector. Claude lists it in its
 
 `skills/` mirrors what createbases.com publishes at
 `/.well-known/skills/index.json`. `scripts/sync.sh` pulls it and a daily
-workflow opens a pull request with any change, so a skill edit made here is
-replaced by the next sync.
+workflow puts any change on a branch for a maintainer to review, so a skill
+edit made here is replaced by the next sync.
 
 ## Contributing
 
