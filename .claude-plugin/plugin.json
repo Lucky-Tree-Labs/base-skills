@@ -2,12 +2,17 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "base",
   "description": "Create, share, and work in Bases: permissioned, cited knowledge bases that people and their agents read and build together",
-  "version": "1.0.0",
-  "logo": "assets/app-icon.svg",
+  "version": "1.1.0",
+  "icon": "assets/icon.png",
+  "privacyPolicyUrl": "https://createbases.com/privacy",
   "mcpServers": {
     "base": {
       "type": "http",
-      "url": "https://createbases.com/api/mcp"
+      "url": "https://createbases.com/api/mcp",
+      "headers": {
+        "X-Source-Name": "claude-code-plugin",
+        "X-Source-Version": "1.1.0"
+      }
     }
   },
   "author": {

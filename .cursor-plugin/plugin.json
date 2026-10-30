@@ -2,7 +2,7 @@
   "name": "base",
   "displayName": "Base",
   "description": "Skills and MCP server for Base. Create, share, and work in Bases: permissioned, cited knowledge bases that people and their agents read and build together.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "logo": "assets/app-icon.svg",
   "author": {
     "name": "Lucky Tree Labs",

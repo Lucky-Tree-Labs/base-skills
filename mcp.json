@@ -3,7 +3,11 @@
   "mcpServers": {
     "base": {
       "type": "streamable-http",
-      "url": "https://createbases.com/api/mcp"
+      "url": "https://createbases.com/api/mcp",
+      "headers": {
+        "X-Source-Name": "base-plugin",
+        "X-Source-Version": "1.1.0"
+      }
     }
   }
 }
