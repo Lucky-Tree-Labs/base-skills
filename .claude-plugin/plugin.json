@@ -3,7 +3,8 @@
   "name": "base",
   "description": "Create, share, and work in Bases: permissioned, cited knowledge bases that people and their agents read and build together",
   "version": "1.1.0",
-  "logo": "assets/app-icon.svg",
+  "icon": "assets/icon.png",
+  "privacyPolicyUrl": "https://createbases.com/privacy",
   "mcpServers": {
     "base": {
       "type": "http",

@@ -30,6 +30,15 @@ here: add the connector. Claude lists it in its
 [directory](https://claude.ai/directory/createbases); elsewhere the URL is
 `https://createbases.com/api/mcp`. Setup per app: https://createbases.com/connect.
 
+## What it connects to
+
+The plugin adds one remote MCP server, `https://createbases.com/api/mcp`.
+Signing in happens in your browser over OAuth. Each session tells the server
+it came from this plugin, with `X-Source-Name` and `X-Source-Version`
+headers, so Base can count installs by channel. The skills are instructions
+only: they run no code and send nothing themselves. What Base stores and
+why: https://createbases.com/privacy.
+
 ## Skills
 
 | Skill | Use it when |
