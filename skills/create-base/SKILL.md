@@ -50,13 +50,21 @@ stop. Never guess at tool names.
    Extraction runs in the background. A repeated `file_name` versions the
    document rather than duplicating it.
 3. Optional: `configure_base` for `access` (`link`: anyone holding it;
-   `invite`: a guest list), `goal` (what the Base should help people do;
-   setting it re-reads the Base and spends credits, so say so first), and
+   `invite`: a guest list), `invite` (people by email; inviting anyone
+   makes the Base invite-only, and each is emailed the link when it goes
+   live), `remove`, `goal` (what the Base should help people do; setting it
+   re-reads the Base and spends credits, so say so first), and
    `reread_on_new_documents`. Paid access is set on the site.
-4. `act_on_base` with `action: "publish"`. If it returns `enriching`, the
-   Base seals itself when extraction finishes; call again to confirm.
+4. `act_on_base` with `action: "publish"`. The link turns on in that call;
+   documents still being read fill in as reading finishes, and `detail`
+   names any file no text could be read from.
 5. Give the user `share_url`. It works in a browser and in any AI that
    opens it.
+
+Until step 4 the Base is a draft and its link opens for nobody. Every owner
+result (`create_base`, `add_document`, `get_base`, `configure_base`,
+`act_on_base`) carries `status` and `status_note`; pass the note on so the
+user knows whether the link is live.
 
 Publishing serves the link to anyone holding it, so state that before
 publishing a `link` Base, and prefer `invite` for anything private.
