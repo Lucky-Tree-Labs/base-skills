@@ -19,8 +19,15 @@ custom connector. Setup: https://createbases.com/connect (plain text:
 /instructions.md). Without the connector, a share link still opens in a
 browser and reads as a snapshot.
 
-If the tools below are not in your list, the connector is not connected or
-its tool list is stale. Ask the person to connect or refresh it, and stop.
+If the tools below are not in your list, Base is not set up where you run,
+or its tool list is stale. Read https://createbases.com/llms.txt, follow its
+setup for where you run, then come back here. In a coding agent every tool is
+also one shell command, `npx base-knowledge call <tool> '<json>'`, which works
+before the MCP server's own sign-in.
+
+Base changes often. Before relying on a tool or field you remember rather
+than see, read https://createbases.com/changelog.md: what changed, newest
+first, and which old names were retired.
 
 ## Finding the Base
 
@@ -75,3 +82,18 @@ Only where the owner switched it on for that Base; a refusal says so.
   spending. Point the user at the Base's page on the site.
 - A gated or paid Base returns what the user may see and nothing more. Do
   not try to work around it.
+
+## When a call fails
+
+Base's errors say what to do next; read them before retrying. If a call fails
+the same way twice, stop retrying, tell the person what failed, and choose a
+different route or ask.
+
+## Feedback on this skill
+
+If this skill told you something wrong or left something out, ask the person
+whether to report it. With their yes, open an issue at
+https://github.com/Lucky-Tree-Labs/base-skills/issues/new titled
+`skill-feedback: <what was wrong>`, naming the skill and the section, or
+email support@createbases.com. A wrong answer from a Base is different: that
+goes to its owner with `tell_base`.
