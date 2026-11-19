@@ -27,8 +27,11 @@ As a Claude Code plugin, skills and MCP server together:
 
 In ChatGPT, Claude, and other hosted chats there is nothing to install from
 here: add the connector. Claude lists it in its
-[directory](https://claude.ai/directory/createbases); elsewhere the URL is
-`https://createbases.com/api/mcp`. Setup per app: https://createbases.com/connect.
+[connector directory](https://claude.ai/directory/createbases), and ChatGPT
+lists it as Base Knowledge in its
+[plugin directory](https://chatgpt.com/plugins/plugin_asdk_app_6aebbd3a8a6c81919a191445b7a31014);
+elsewhere the URL is `https://createbases.com/api/mcp`. Setup per app:
+https://createbases.com/connect.
 
 ## Skills
 
@@ -36,6 +39,7 @@ here: add the connector. Claude lists it in its
 | --- | --- |
 | [`create-base`](skills/create-base/SKILL.md) | Documents, URLs, or text should become a Base shared by one link. |
 | [`work-in-base`](skills/work-in-base/SKILL.md) | Opening, questioning, or contributing to a Base, including a pasted `/s/` link. |
+| [`check-bases`](skills/check-bases/SKILL.md) | Catching up on what changed in your Bases and what is waiting on you, once or on a schedule. |
 
 ## Where the skills come from
 
